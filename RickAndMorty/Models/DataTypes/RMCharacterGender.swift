@@ -8,8 +8,8 @@
 import Foundation
 
 enum RMCharacterGender: String, Codable {
-    case man = "Man"
-    case woman = "Woman"
+    case man = "Male"
+    case woman = "Female"
     case genderless = "Genderless"
-    case `unknown` = "Unknown"
+    case `unknown` = "unknown"
 }

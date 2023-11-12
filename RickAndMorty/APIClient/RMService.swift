@@ -57,7 +57,6 @@ final class RMService{
         var request = URLRequest(url: url)
         request.httpMethod = rmRequest.httpMethod
         
-        
         return request
     }
 }
