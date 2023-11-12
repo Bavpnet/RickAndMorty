@@ -9,12 +9,11 @@ import Foundation
 
 
 struct MSEpisose  :Codable {
-    let id: Int,
+    let id: Int
     let name: String
     let air_date: String
     let episode: String
-    let characters: [String],
+    let characters: [String]
     let url: String
     let created: String
-    
 }
