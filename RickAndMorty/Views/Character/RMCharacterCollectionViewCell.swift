@@ -39,6 +39,7 @@ final class RMCharacterCollectionViewCell: UICollectionViewCell {
         contentView.backgroundColor = .secondarySystemBackground
         contentView.addSubViews(imageView, nameLabel, statusLabel)
         addConstraints()
+        contentView.layer.masksToBounds = true
         contentView.layer.cornerRadius = 12
         setUpLayer()
         
