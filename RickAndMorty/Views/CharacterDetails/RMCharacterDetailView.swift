@@ -35,7 +35,7 @@ final class RMCharacterDetailView: UIView {
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         addConstraints()
-        
+      
     }
     
     required init?(coder: NSCoder) {

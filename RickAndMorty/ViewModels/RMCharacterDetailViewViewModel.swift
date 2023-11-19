@@ -33,7 +33,7 @@ final class RMCharacterDetailViewViewModel {
     
     
     public var title: String {
-        character.name.uppercased()
+        character.name
     }
     
     public func createPhotoSectionLayout() -> NSCollectionLayoutSection{
@@ -96,8 +96,8 @@ final class RMCharacterDetailViewViewModel {
                                                         trailing: 4)
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(0.8),
-                heightDimension: .absolute(150)),
+                widthDimension: .fractionalWidth(0),
+                heightDimension: .absolute(0)),
             subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
