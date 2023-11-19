@@ -9,12 +9,11 @@ import UIKit
 
 final class RMAboutViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-        view.backgroundColor = .systemBackground
-        title = "About"
-    }
-    
+    view.backgroundColor = .systemBackground
+    title = "About"
+  }
 
 }

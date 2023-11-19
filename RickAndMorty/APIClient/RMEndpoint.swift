@@ -8,8 +8,8 @@
 import Foundation
 
 /// Possible Endpoints in the API: https://rickandmortyapi.com/
-@frozen enum RMEndpoint: String{
-   case character
-    case location
-    case episdode
+@frozen enum RMEndpoint: String {
+  case character
+  case location
+  case episdode
 }

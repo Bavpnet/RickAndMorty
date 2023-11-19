@@ -8,47 +8,46 @@
 import Foundation
 
 final class RMCharacterCollectionViewCellViewModel: Hashable, Equatable {
-    public let characterName: String
-    private let characterStatus: RMCharacterStatus
-    private let characterImageUrl: URL?
+  public let characterName: String
+  private let characterStatus: RMCharacterStatus
+  private let characterImageUrl: URL?
 
-    // MARK: - Init
+  // MARK: - Init
 
-    init(
-        characterName: String,
-        characterStatus: RMCharacterStatus,
-        characterImageUrl: URL?
-    ) {
-        self.characterName = characterName
-        self.characterStatus = characterStatus
-        self.characterImageUrl = characterImageUrl
+  init(
+    characterName: String,
+    characterStatus: RMCharacterStatus,
+    characterImageUrl: URL?
+  ) {
+    self.characterName = characterName
+    self.characterStatus = characterStatus
+    self.characterImageUrl = characterImageUrl
+  }
+
+  public var characterStatusText: String {
+    return "Status: \(characterStatus.text)"
+  }
+
+  public func fetchImage(completion: @escaping ((Result<Data, Error>) -> Void)) {
+    guard let url = characterImageUrl else {
+      completion(.failure(URLError(.badURL)))
+      return
     }
 
-    public var characterStatusText: String {
-        return "Status: \(characterStatus.text)"
-    }
+    RMImageLoader.shared.self.downloadImage(url, completion: completion)
+  }
 
-    public func fetchImage(completion: @escaping ((Result<Data, Error>) -> Void)){
-        guard let url = characterImageUrl else {
-            completion(.failure(URLError(.badURL)))
-            return
-        }
-        
-        RMImageLoader.shared.self.downloadImage(url, completion: completion)
-    }
+  // MARK: - Hashable
 
-    // MARK: - Hashable
+  static func == (
+    lhs: RMCharacterCollectionViewCellViewModel, rhs: RMCharacterCollectionViewCellViewModel
+  ) -> Bool {
+    return lhs.hashValue == rhs.hashValue
+  }
 
-    static func == (lhs: RMCharacterCollectionViewCellViewModel, rhs: RMCharacterCollectionViewCellViewModel) -> Bool {
-        return lhs.hashValue == rhs.hashValue
-    }
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(characterName)
-        hasher.combine(characterStatus)
-        hasher.combine(characterImageUrl)
-    }
+  func hash(into hasher: inout Hasher) {
+    hasher.combine(characterName)
+    hasher.combine(characterStatus)
+    hasher.combine(characterImageUrl)
+  }
 }
-
-
-
