@@ -8,10 +8,10 @@
 import Foundation
 
 
-struct MSEpisose  :Codable {
+struct MSEpisose :Codable {
     let id: Int
     let name: String
-    let air_date: String
+    let airDate: String
     let episode: String
     let characters: [String]
     let url: String
