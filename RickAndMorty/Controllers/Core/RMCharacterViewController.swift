@@ -30,6 +30,7 @@ final class RMCharacterViewController: UIViewController, RMCharacterListViewDele
       characterListView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
     ])
   }
+    
   func rmCharacterListView(
     _ characterListView: RMCharacterListView, didSelectCharacter character: RMCharacter
   ) {
